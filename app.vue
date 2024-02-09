@@ -22,8 +22,19 @@
           </div>
 
           <!-- 主内容区域 -->
+          <!--<main class="col-span-12 md:col-span-8 xl:col-span-6 bg-red-500">
+            1
+          </main>-->
 
           <!-- 右侧边栏 -->
+          <div class="col-span-12 xl:col-span-4 md:col-span-3 bg-blue-500">
+
+            <!-- 侧边栏内容在页面滚动时保持在顶部 -->
+            <div class="sticky top-0">
+              <!-- 侧边栏组件插槽，用于插入侧边栏内容 -->
+              <SidebarRight/>
+            </div>
+          </div>
 
         </div>
 
