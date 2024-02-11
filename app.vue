@@ -45,6 +45,6 @@
 
 <script setup>
 // 使用Vue 3的Composition API，定义一个响应式变量控制暗黑模式的开关
-const darkMode = ref(false)
+const darkMode = ref(true)
 
 </script>

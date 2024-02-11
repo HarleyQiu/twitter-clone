@@ -27,7 +27,7 @@ const whatsHappeningItems = ref([
       <SidebarRightPreviewCardItem v-for="whatHappening in whatsHappeningItems">
         <div>
           <!-- 条目标题：加粗，灰色文字，中等文字大小 -->
-          <h2 class="font-bold text-gray-800 text-md">{{ whatHappening.title }}</h2>
+          <h2 class="font-bold text-gray-800 text-md dark:text-white">{{ whatHappening.title }}</h2>
           <!-- 条目计数：小号文字，浅灰色文字 -->
           <p class="text-xs text-gray-400">{{ whatHappening.count }}</p>
         </div>
