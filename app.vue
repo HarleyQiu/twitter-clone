@@ -22,12 +22,13 @@
           </div>
 
           <!-- 主内容区域 -->
-          <!--<main class="col-span-12 md:col-span-8 xl:col-span-6 bg-red-500">
-            1
-          </main>-->
+          <main class="col-span-12 marker:md:col-span-8 xl:col-span-6">
+            <!-- 路由视图，用于显示匹配的组件 -->
+            <router-view/>
+          </main>
 
-          <!-- 右侧边栏 -->
-          <div class="col-span-12 xl:col-span-4 md:col-span-3 bg-blue-500">
+          <!-- 右侧边栏，在中屏幕尺寸以上显示，在不同屏幕尺寸下调整占用的列数 -->
+          <div class="hidden md:block col-span-12 xl:col-span-4 md:col-span-3">
 
             <!-- 侧边栏内容在页面滚动时保持在顶部 -->
             <div class="sticky top-0">
@@ -45,6 +46,6 @@
 
 <script setup>
 // 使用Vue 3的Composition API，定义一个响应式变量控制暗黑模式的开关
-const darkMode = ref(true)
+const darkMode = ref(false)
 
 </script>

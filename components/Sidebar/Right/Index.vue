@@ -14,6 +14,25 @@ const whatsHappeningItems = ref([
     count: '1,8k Tweets'
   }
 ])
+
+// 定义另一个响应式数组ref，用于存储推荐关注的用户信息
+const whoToFollowItems = ref([
+  {
+    name: 'Elon Musk',
+    handle: '@elonmusk',
+    image: 'https://picsum.photos/200/200'
+  },
+  {
+    name: 'Vitalik Buterin',
+    handle: '@VitalikButerin',
+    image: 'https://picsum.photos/200/200'
+  },
+  {
+    name: 'Jack Dorsey',
+    handle: '@jack',
+    image: 'https://picsum.photos/200/200'
+  }
+])
 </script>
 
 <template>
@@ -36,8 +55,30 @@ const whatsHappeningItems = ref([
     </SidebarRightPreviewCard>
 
 
-    <!-- "推荐关注"预览卡片，只传入标题，内部内容可能在其他地方定义或通过插槽添加 -->
-    <SidebarRightPreviewCard title="Who to follow"/>
+    <!-- "推荐关注"预览卡片，传入标题 -->
+    <SidebarRightPreviewCard title="Who to follow">
+      <!-- 遍历推荐关注列表，展示用户信息和关注按钮 -->
+      <SidebarRightPreviewCardItem v-for="whoToFollow in whoToFollowItems">
+        <div class="flex flex-row items-center justify-between p-2">
+          <!-- 用户头像和信息 -->
+          <div class="flex flex-row">
+            <img class="w-10 h-10 rounded-full" :src="whoToFollow.image" :alt="whoToFollow.name">
+
+            <div class="flex flex-col ml-2">
+              <h1 class="text-sm font-bold text-gray-900 dark:text-white">{{ whoToFollow.name }}</h1>
+              <p class="text-xs text-gray-400">{{ whoToFollow.handle }}</p>
+            </div>
+          </div>
+
+          <!-- 关注按钮 -->
+          <div class="flex h-full">
+            <button class="px-4 py-2 font-bold text-xs text-white dark:text-black bg-black dark:bg-white rounded-full">
+              Follow
+            </button>
+          </div>
+        </div>
+      </SidebarRightPreviewCardItem>
+    </SidebarRightPreviewCard>
   </div>
 </template>
 
